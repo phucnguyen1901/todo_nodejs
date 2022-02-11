@@ -1,0 +1,38 @@
+
+extends layout.pug
+
+block css 
+    link(rel="stylesheet", href="/css/login.css")
+
+block content
+
+
+    if messages.success
+        .alert.alert-danger(role='alert').mb-0
+            .text-center #{messages.error}
+
+    if messages.error
+        .alert.alert-danger(role='alert').mb-0
+            .text-center #{messages.error}
+
+    .bg
+        .row.justify-content-center
+                form(method="POST", action="/postLogin").form-container
+                    .form-group
+                        label(for='exampleInputEmail1') Username
+                        input.form-control(placeholder='Enter username', name="username", value= messages.username != undefined  ? `${messages.username}`:"",autocomplete="off" )
+                    .form-group
+                        label(for='exampleInputPassword1') Password
+                        input.form-control(type='password' placeholder='Password', name="password")
+                    button.w-100.btn.btn-primary(type='submit') Login
+                    br
+                    a(href="/register") Register now? 
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+
+extends layout.pug
+
+block css 
+    link(rel="stylesheet", href="/css/login.css")
+
+block content
+
+    if messages.error
+        .alert.alert-danger(role='alert').mb-0
+            .text-center #{messages.error}
+
+    .bg
+        .row.justify-content-center
+                form(method="post", action="/postRegister").form-container
+                    .form-group
+                        label(for='exampleInputEmail1') Fullname
+                        input.form-control(placeholder='Enter fullname', name="fullname")
+                    .form-group
+                        label(for='exampleInputEmail1') Username
+                        input.form-control(placeholder='Enter username', name="username")
+                    .form-group
+                        label(for='exampleInputPassword1') Password
+                        input.form-control(type='password' placeholder='Password', name="password")
+                    button.w-100.btn.btn-primary(type='submit') Register
+                    br
+                    a(href="/login") Login now? 

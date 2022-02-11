@@ -1,0 +1,9 @@
+http://localhost:3000/api/my-list
+
+post http://localhost:3000/test
+Content-Type: application/json
+
+{
+    "username": "ntphuc1",
+    "password": "000001"
+}
